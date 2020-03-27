@@ -1,6 +1,7 @@
 //root file of app
 const express =  require('express')
 const cors = require('cors')
+const { errors } = require('celebrate')
 const routes = require('./routes')
 const app  =  express()
 
@@ -10,7 +11,7 @@ app.use(express.json())
 
 //User routes
 app.use(routes)
-
+app.use(errors())
 /**
  * Rota / Recurso
  */
@@ -40,7 +41,4 @@ app.use(routes)
     * Driver: SELECT * FROM users
     * Query Builder: table('users).select('*').where() /KNEXJS
     */
-
-
-
-app.listen(3333)
+module.exports = app
