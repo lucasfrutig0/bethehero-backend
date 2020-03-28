@@ -1,7 +1,9 @@
-const request = require('supertest')
-const app = require('../../src/app')
-const connection = require('../../src/database/connection')
+const request = require('supertest') //chamadas a api teste
+const app = require('../../src/app') //importa a aplicação
+const connection = require('../../src/database/connection') //conecção com banco de dados
 
+
+// teste cadastro de ONG
 describe('ONG', () => {
   beforeEach( async () => {
     await connection.migrate.rollback()
